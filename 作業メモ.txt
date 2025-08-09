@@ -1,0 +1,3 @@
+■動作確認のURL
+http://localhost:5075/swagger
+

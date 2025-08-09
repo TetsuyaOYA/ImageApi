@@ -1,0 +1,51 @@
+# --- OS / IDE ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+*.DotSettings.user
+_ReSharper.Caches/
+
+# VS / VS Code
+.vs/
+.vscode/
+
+# --- .NET build artifacts ---
+[Bb]in/
+[Oo]bj/
+out/
+*.user
+*.suo
+*.userprefs
+
+# Logs / diagnostics
+*.log
+logs/
+Log/
+TestResults/
+*.coverage
+*.coveragexml
+coverage*.xml
+coverage*.json
+
+# NuGet (repo 直下に置いた場合のみ)
+.nuget/
+
+# --- SQLite ---
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# --- Static files (uploaded runtime assets) ---
+/wwwroot/uploads/**
+!/wwwroot/uploads/.gitkeep
+
+# --- App settings (ローカル専用のものだけ) ---
+appsettings.*.local.json
+appsettings.Local.json
+secrets.json
