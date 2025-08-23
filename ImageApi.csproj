@@ -18,7 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include=".github\workflows\docker.yml" />
     <Content Include=".github\workflows\dotnet.yml" />
+    <Content Include=".github\workflows\lint.yml" />
+    <Content Include=".github\workflows\vuln.yml" />
   </ItemGroup>
 
 </Project>

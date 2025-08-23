@@ -1,0 +1,18 @@
+name: docker-build
+
+on:
+  pull_request:
+    branches: [ "main", "develop" ]
+
+jobs:
+  build-api:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build dev image (Dockerfile.dev)
+        run: docker build -t imageapi-dev -f Dockerfile.dev .
+
+      # 本番用 Dockerfile を持つなら、同様に build を追加
+      # - name: Build prod image
+      #   run: docker build -t imageapi:latest -f Dockerfile .

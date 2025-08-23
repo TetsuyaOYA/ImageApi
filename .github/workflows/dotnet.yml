@@ -1,4 +1,4 @@
-name: build-and-test
+name: dotnet-ci
 
 on:
   push:
@@ -7,16 +7,24 @@ on:
     branches: [ "main", "develop" ]
 
 jobs:
-  build:
+  build-test-format:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-dotnet@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '9.0.x'
+
       - name: Restore
         run: dotnet restore
-      - name: Build
+
+      - name: Build (Release)
         run: dotnet build --configuration Release --no-restore
+
       - name: Test
         run: dotnet test --no-build --verbosity normal
+
+      - name: Verify formatting
+        run: dotnet format ./ImageApi.csproj --verify-no-changes --verbosity minimal
