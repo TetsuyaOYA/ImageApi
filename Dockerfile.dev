@@ -1,5 +1,13 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0
 WORKDIR /workspace
+
+# ファイル監視が大量変更で落ちにくいように（任意）
 ENV DOTNET_CLI_TELEMETRY_OPTOUT=1 \
-    ASPNETCORE_URLS=http://0.0.0.0:8080
+    ASPNETCORE_URLS=http://0.0.0.0:8080 \
+    DOTNET_WATCH_SUPPRESS_LAUNCH=1
+
+# 依存パッケージの先読みをしたい場合（任意）
+# COPY ImageApi.csproj ./
+# RUN dotnet restore
+
 CMD ["dotnet","watch","--non-interactive","run","--no-launch-profile","--urls","http://0.0.0.0:8080","--project","ImageApi.csproj"]

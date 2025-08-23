@@ -49,3 +49,14 @@ coverage*.json
 appsettings.*.local.json
 appsettings.Local.json
 secrets.json
+
+# build artifacts
+bin/
+obj/
+
+# user / tooling
+.vscode/
+.idea/
+
+# env / secrets
+.env

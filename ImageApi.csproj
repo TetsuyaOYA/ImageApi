@@ -17,4 +17,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="9.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include=".github\workflows\dotnet.yml" />
+  </ItemGroup>
+
 </Project>
