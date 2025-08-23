@@ -146,5 +146,7 @@ app.MapGet("/api/persons/{id:int}", async (int id, AppDbContext db) =>
 
 // 動作確認用
 app.MapGet("/ping", () => "pong");
+app.MapGet("/ping_x", () => "pong");
 
 app.Run();
+//
