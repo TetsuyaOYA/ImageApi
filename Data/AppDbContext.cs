@@ -6,8 +6,8 @@ namespace ImageApi.Data;
 public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
 {
     public DbSet<ImageFile> Images => Set<ImageFile>();
-    public DbSet<Person>    Persons => Set<Person>();
-    
+    public DbSet<Person> Persons => Set<Person>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Person>(b =>

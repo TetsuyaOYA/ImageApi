@@ -57,7 +57,7 @@ app.MapPost("/api/images", async (IFormFile file, AppDbContext db) =>
         contentType = "application/octet-stream";
 
     var storedFileName = $"{Guid.NewGuid():N}{ext}";
-    var storedPath     = Path.Combine(uploadDir, storedFileName);
+    var storedPath = Path.Combine(uploadDir, storedFileName);
 
     try
     {
@@ -68,10 +68,10 @@ app.MapPost("/api/images", async (IFormFile file, AppDbContext db) =>
         // DB 追加
         var entity = new ImageFile
         {
-            FileName    = storedFileName,
+            FileName = storedFileName,
             ContentType = contentType,
-            Length      = file.Length,
-            UploadedAt  = DateTime.UtcNow
+            Length = file.Length,
+            UploadedAt = DateTime.UtcNow
         };
 
         db.Images.Add(entity);
@@ -124,15 +124,15 @@ app.MapPost("/api/persons", async (PersonUpsertDto dto, AppDbContext db) =>
     {
         var entity = new Person
         {
-            Name          = dto.Name,
-            PartName      = dto.PartName,
+            Name = dto.Name,
+            PartName = dto.PartName,
             PhotoFileName = dto.PhotoFileName,
-            BirthDate     = dto.BirthDate
+            BirthDate = dto.BirthDate
         };
-        
+
         db.Persons.Add(entity);
         await db.SaveChangesAsync();
-        
+
         return Results.Created($"/api/persons/{entity.Id}", entity);
     })
     .Produces<Person>(StatusCodes.Status201Created)
