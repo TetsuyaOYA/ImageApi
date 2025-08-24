@@ -1,10 +1,17 @@
-[*.cs]
-csharp_style_namespace_declarations = file_scoped:suggestion
-indent_style = space
-indent_size = 4
-
+# まず全ファイル共通（ここが基礎）
 [*]
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
-charset = utf-8
+charset = utf-8   # （BOMなしを指す）。VS/VSCodeともOK
+
+# C#だけの書式
+[*.cs]
+indent_style = space
+indent_size = 4
+csharp_style_namespace_declarations = file_scoped:suggestion
+
+# XML系（.csproj 等）もLF/末尾改行を強制
+[*.{csproj,props,targets,xml}]
+indent_style = space
+indent_size = 2
