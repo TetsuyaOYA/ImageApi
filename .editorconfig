@@ -3,10 +3,11 @@
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
-charset = utf-8   # （BOMなしを指す）。VS/VSCodeともOK
+charset = utf-8-bom
 
 # C#だけの書式
 [*.cs]
+csharp_style_namespace_declarations = file_scoped:suggestion
 indent_style = space
 indent_size = 4
 csharp_style_namespace_declarations = file_scoped:suggestion

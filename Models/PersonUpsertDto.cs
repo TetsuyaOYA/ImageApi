@@ -1,4 +1,4 @@
-namespace ImageApi.Models;
+﻿namespace ImageApi.Models;
 
 public sealed class PersonUpsertDto
 {
